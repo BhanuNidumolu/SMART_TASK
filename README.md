@@ -1,6 +1,10 @@
 ****DEMO LINK**** : https://drive.google.com/file/d/1m9wK0UVyRBKqv1Nin7W3s3y48MVUidQ9/view?usp=sharing
 
 
+
+https://github.com/user-attachments/assets/703cf535-74de-498a-93a3-7af3e3873112
+
+
 # 🚀 Smart Task Planner
 
 ![Java](https://img.shields.io/badge/Java-17-blue.svg)
