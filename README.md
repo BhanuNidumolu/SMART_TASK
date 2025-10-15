@@ -10,12 +10,22 @@
 
 ***NOTE***: ***Used AI for FrontEnd***
 
-## 🧠 Overview
+# 🧠 Smart Task Planner
 
-**Smart Task Planner** is an **AI-powered web application** that transforms natural-language goals into structured, scheduled, and actionable project plans.  
-It intelligently breaks down your goals, analyzes dependencies, and generates an optimized timeline with **critical path analysis**.  
+Smart Task Planner is an **AI-powered web application** that transforms natural-language goals into structured, scheduled, and actionable project plans. It intelligently breaks down your goals, analyzes dependencies, and generates an optimized timeline with **critical path analysis**. Built with **Java 17, Spring Boot 3, and Spring AI**, it combines the power of AI with modern backend engineering to simplify project planning and execution.
 
-Built with **Java 17**, **Spring Boot 3**, and **Spring AI**, it combines the power of AI with modern backend engineering to simplify project planning and execution.
+---
+
+## 🎯 Project Goals & Problems Solved
+
+The primary goal of this project is to **bridge the gap between high-level ideas and executable project plans** by leveraging AI to automate the most tedious and error-prone aspects of planning.
+
+| Problem | How Smart Task Planner Solves It |
+|---------|--------------------------------|
+| **The "Blank Page" Problem** | Users no longer need to start from scratch. By simply stating a goal, AI generates an instant, comprehensive task breakdown. |
+| **Manual & Error-Prone Scheduling** | Dependency-aware scheduling automates task ordering, creating a logical and efficient timeline without human error. |
+| **Lack of Focus on Key Tasks** | Critical path analysis automatically identifies and highlights the most crucial tasks, enabling users to prioritize effectively. |
+| **Poor User Experience with Slow Processes** | Asynchronous processing and real-time WebSocket notifications ensure a seamless, non-blocking experience, informing users as soon as the plan is ready. |
 
 ---
 
