@@ -1,0 +1,55 @@
+server:
+  mvc:
+    favicon:
+      enabled: false
+  port: 8081
+
+spring:
+  application:
+    name: SMART_TASK
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  datasource:
+    url: jdbc:mysql://localhost:3306/task_planner_db?createDatabaseIfNotExist=TRUE
+    username: root
+    password: ${DB_PASS} # Set this environment variable
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update # For production, change this to 'validate' or 'none'
+    database-platform: org.hibernate.dialect.MySQLDialect
+  ai:
+    openai:
+      chat:
+        options:
+          model: "gemini-2.5-flash"
+        completions-path: "/chat/completions"
+      api-key: ${GEMINI_API_KEY}
+      base-url: "https://generativelanguage.googleapis.com/v1beta/openai/"
+logging:
+  level:
+    root: INFO
+    springai.personaltaskplanner: DEBUG
+    org.springframework.security: DEBUG
+
+default:
+  system:
+    prompt: |
+      You are a Smart Task Planner assistant. Your job is to break down a user's goal into a structured plan. Use the current date as the start date for all calculations: {currentDateTime}.
+
+      You MUST output ONLY a single, raw JSON object and nothing else. Do not wrap it in markdown or any other text. The JSON object must have a "planTitle" and a "tasks" array.
+
+      Example structure:
+      {
+        "planTitle": "A concise and descriptive title for the overall plan",
+        "tasks": [
+          {"name": "Task Name", "duration": 2.5, "deadline": "YYYY-MM-DD'T'HH:mm:ssXXX", "dependencies": ["Dependency Task Name"], "priority": "High"}
+        ]
+      }
+
+      Ensure all tasks are logical, have dependencies where appropriate, and a priority of "High", "Medium", or "Low". All date-times must be in ISO-8601 format with timezone offset.
