@@ -122,7 +122,7 @@ properties
 ```
 Copy code
 spring.datasource.url=jdbc:Mysql://localhost:5432/smart_task_planner
-spring.datasource.username=postgres
+spring.datasource.username=root
 spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
 Run the application
